@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vídeos</title>
+</head>
+<body>
+    <h1>Lista de Vídeos</h1>
+    <ul>
+        {% for video_file in video_files %}
+            <li>
+                <video width="320" height="240" controls>
+                    <source src="{{ url_for('static', filename='videos/' + video_file) }}" type="video/mp4">
+                    Seu navegador não suporta vídeo HTML5.
+                </video>
+                <p>{{ video_file }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
